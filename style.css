@@ -1,38 +1,104 @@
-/* Global Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Page Background */
-body {
-    font-family: "Inter", Arial, sans-serif;
-    background: #f7f7f7;
-    color: #222;
-    line-height: 1.7;
-    padding: 20px;
-}
-
-/* Main Container */
-.container {
+/* BOF Blog Layout */
+.blog-container {
     max-width: 900px;
     margin: auto;
-    background: #ffffff;
+    background: #111;
     padding: 40px 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    color: #eee;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
-/* Title */
-.title {
-    font-size: 2.4rem;
+.blog-title {
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 20px;
     text-align: center;
+    margin-bottom: 10px;
+    color: #fff;
 }
 
-/* Intro Paragraphs */
-.intro {
-    margin-bottom: 20px;
-    font
+.blog-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #bbb;
+}
+
+.post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post-card {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #eee;
+    border: 1px solid #222;
+    transition: 0.2s;
+    position: relative;
+}
+
+.post-card:hover {
+    background: #222;
+    border-color: #007bff;
+}
+
+.post-card h2 {
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+}
+
+.post-card p {
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.post-arrow {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    color: #007bff;
+}
+
+/* BOF Blog Post Page */
+.post-container {
+    max-width: 900px;
+    margin: auto;
+    background: #111;
+    padding: 40px 30px;
+    border-radius: 12px;
+    color: #eee;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.post-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.post-meta {
+    font-size: 0.95rem;
+    color: #888;
+    margin-bottom: 25px;
+}
+
+/* Mobile Optimization */
+@media (max-width: 600px) {
+    .blog-container, .post-container {
+        padding: 25px 20px;
+    }
+
+    .blog-title {
+        font-size: 1.8rem;
+    }
+
+    .post-title {
+        font-size: 1.6rem;
+    }
+}
