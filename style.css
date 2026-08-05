@@ -1,49 +1,116 @@
-/* BOF Blog Layout */
-.blog-container {
+/* --------------------------------------------------
+   BLACK OPS FARO — BOF MASTER STYLE
+   Modern • Tactical • Responsive • Minimalist
+-------------------------------------------------- */
+
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GLOBAL COLORS */
+:root {
+    --bof-bg: #0d0d0d;
+    --bof-surface: #151515;
+    --bof-border: #222;
+    --bof-text: #e6e6e6;
+    --bof-subtext: #9c9c9c;
+    --bof-accent: #0a84ff;
+    --bof-accent-soft: #005fcc;
+}
+
+/* PAGE BACKGROUND */
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: var(--bof-bg);
+    color: var(--bof-text);
+    line-height: 1.7;
+    padding: 20px;
+}
+
+/* MAIN CONTAINER */
+.container, .blog-container, .post-container {
     max-width: 900px;
     margin: auto;
-    background: #111;
+    background: var(--bof-surface);
     padding: 40px 30px;
-    border-radius: 12px;
-    color: #eee;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    border-radius: 14px;
+    border: 1px solid var(--bof-border);
+    box-shadow: 0 4px 25px rgba(0,0,0,0.45);
 }
 
-.blog-title {
-    font-size: 2.2rem;
+/* TITLES */
+.title, .blog-title, .post-title {
+    font-size: 2.4rem;
     font-weight: 700;
+    margin-bottom: 20px;
     text-align: center;
-    margin-bottom: 10px;
-    color: #fff;
+    color: var(--bof-text);
 }
 
+/* SUBTITLE */
 .blog-subtitle {
     text-align: center;
     font-size: 1.1rem;
     margin-bottom: 30px;
-    color: #bbb;
+    color: var(--bof-subtext);
 }
 
+/* PARAGRAPHS */
+p, .intro, .closing {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: var(--bof-text);
+}
+
+/* SECTION HEADERS */
+h2 {
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--bof-text);
+    border-left: 4px solid var(--bof-accent);
+    padding-left: 12px;
+}
+
+/* LISTS */
+ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+    color: var(--bof-subtext);
+}
+
+/* BLOG POST LIST */
 .post-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+/* BLOG POST CARD */
 .post-card {
-    background: #1a1a1a;
+    background: var(--bof-surface);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     text-decoration: none;
-    color: #eee;
-    border: 1px solid #222;
-    transition: 0.2s;
+    color: var(--bof-text);
+    border: 1px solid var(--bof-border);
+    transition: 0.25s;
     position: relative;
 }
 
 .post-card:hover {
-    background: #222;
-    border-color: #007bff;
+    background: #1f1f1f;
+    border-color: var(--bof-accent);
+    transform: translateY(-2px);
 }
 
 .post-card h2 {
@@ -53,7 +120,7 @@
 
 .post-card p {
     margin-bottom: 10px;
-    color: #ccc;
+    color: var(--bof-subtext);
 }
 
 .post-arrow {
@@ -62,43 +129,31 @@
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.4rem;
-    color: #007bff;
+    color: var(--bof-accent);
 }
 
-/* BOF Blog Post Page */
-.post-container {
-    max-width: 900px;
-    margin: auto;
-    background: #111;
-    padding: 40px 30px;
-    border-radius: 12px;
-    color: #eee;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-}
-
-.post-title {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #fff;
-}
-
+/* POST META */
 .post-meta {
     font-size: 0.95rem;
-    color: #888;
+    color: var(--bof-subtext);
     margin-bottom: 25px;
 }
 
-/* Mobile Optimization */
+/* MOBILE OPTIMIZATION */
 @media (max-width: 600px) {
-    .blog-container, .post-container {
+    .container, .blog-container, .post-container {
         padding: 25px 20px;
     }
 
-    .blog-title {
-        font-size: 1.8rem;
+    .title, .blog-title, .post-title {
+        font-size: 2rem;
     }
 
-    .post-title {
-        font-size: 1.6rem;
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    p, ul li, .closing {
+        font-size: 1rem;
     }
 }
