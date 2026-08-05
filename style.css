@@ -1,27 +1,28 @@
 /* --------------------------------------------------
-   BLACK OPS FARO — BOF MASTER STYLE
-   Modern • Tactical • Responsive • Minimalist
+   BLACK OPS FARO — 3D TACTICAL UI
+   Dark • Blue • Neon • Depth • Shadows
 -------------------------------------------------- */
 
-/* GLOBAL RESET */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* GLOBAL COLORS */
+/* COLOR VARIABLES */
 :root {
-    --bof-bg: #0d0d0d;
-    --bof-surface: #151515;
-    --bof-border: #222;
+    --bof-bg: #05070a;
+    --bof-surface: #0d1117;
+    --bof-surface-2: #111827;
     --bof-text: #e6e6e6;
-    --bof-subtext: #9c9c9c;
-    --bof-accent: #0a84ff;
-    --bof-accent-soft: #005fcc;
+    --bof-subtext: #9ca3af;
+    --bof-blue: #0ea5e9;
+    --bof-blue-glow: #38bdf8;
+    --bof-border: #1f2937;
 }
 
-/* PAGE BACKGROUND */
+/* GLOBAL PAGE */
 body {
     font-family: "Inter", Arial, sans-serif;
     background: var(--bof-bg);
@@ -30,30 +31,39 @@ body {
     padding: 20px;
 }
 
-/* MAIN CONTAINER */
+/* MAIN CONTAINERS */
 .container, .blog-container, .post-container {
     max-width: 900px;
     margin: auto;
     background: var(--bof-surface);
     padding: 40px 30px;
-    border-radius: 14px;
+    border-radius: 16px;
+
+    /* 3D DEPTH */
+    box-shadow:
+        0 0 25px rgba(0, 153, 255, 0.15),
+        0 10px 40px rgba(0, 0, 0, 0.6),
+        inset 0 0 12px rgba(0, 153, 255, 0.05);
+
     border: 1px solid var(--bof-border);
-    box-shadow: 0 4px 25px rgba(0,0,0,0.45);
 }
 
 /* TITLES */
 .title, .blog-title, .post-title {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     font-weight: 700;
-    margin-bottom: 20px;
     text-align: center;
-    color: var(--bof-text);
+    margin-bottom: 20px;
+
+    /* Neon glow */
+    color: var(--bof-blue-glow);
+    text-shadow: 0 0 12px rgba(0, 153, 255, 0.5);
 }
 
 /* SUBTITLE */
 .blog-subtitle {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     margin-bottom: 30px;
     color: var(--bof-subtext);
 }
@@ -61,7 +71,7 @@ body {
 /* PARAGRAPHS */
 p, .intro, .closing {
     margin-bottom: 20px;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: var(--bof-text);
 }
 
@@ -69,10 +79,13 @@ p, .intro, .closing {
 h2 {
     margin-top: 35px;
     margin-bottom: 15px;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: 600;
-    color: var(--bof-text);
-    border-left: 4px solid var(--bof-accent);
+
+    color: var(--bof-blue-glow);
+    text-shadow: 0 0 8px rgba(0, 153, 255, 0.4);
+
+    border-left: 4px solid var(--bof-blue);
     padding-left: 12px;
 }
 
@@ -83,8 +96,8 @@ ul {
 }
 
 ul li {
-    margin-bottom: 10px;
-    font-size: 1.05rem;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
     color: var(--bof-subtext);
 }
 
@@ -92,30 +105,43 @@ ul li {
 .post-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 22px;
 }
 
-/* BLOG POST CARD */
+/* BLOG POST CARD — 3D BOX */
 .post-card {
-    background: var(--bof-surface);
-    padding: 20px;
-    border-radius: 12px;
+    background: var(--bof-surface-2);
+    padding: 22px;
+    border-radius: 14px;
     text-decoration: none;
     color: var(--bof-text);
+
     border: 1px solid var(--bof-border);
+
+    /* 3D SHADOW */
+    box-shadow:
+        0 0 18px rgba(0, 153, 255, 0.15),
+        0 8px 25px rgba(0, 0, 0, 0.5);
+
     transition: 0.25s;
     position: relative;
 }
 
+/* Hover effect */
 .post-card:hover {
-    background: #1f1f1f;
-    border-color: var(--bof-accent);
-    transform: translateY(-2px);
+    background: #1a2332;
+    border-color: var(--bof-blue);
+
+    transform: translateY(-4px) scale(1.02);
+
+    box-shadow:
+        0 0 25px rgba(0, 153, 255, 0.35),
+        0 12px 35px rgba(0, 0, 0, 0.7);
 }
 
 .post-card h2 {
     margin-bottom: 8px;
-    font-size: 1.4rem;
+    font-size: 1.45rem;
 }
 
 .post-card p {
@@ -123,13 +149,14 @@ ul li {
     color: var(--bof-subtext);
 }
 
+/* Arrow */
 .post-arrow {
     position: absolute;
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.4rem;
-    color: var(--bof-accent);
+    font-size: 1.5rem;
+    color: var(--bof-blue);
 }
 
 /* POST META */
@@ -146,14 +173,14 @@ ul li {
     }
 
     .title, .blog-title, .post-title {
-        font-size: 2rem;
+        font-size: 2.1rem;
     }
 
     h2 {
-        font-size: 1.4rem;
+        font-size: 1.45rem;
     }
 
     p, ul li, .closing {
-        font-size: 1rem;
+        font-size: 1.05rem;
     }
 }
